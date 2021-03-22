@@ -10,7 +10,6 @@ import {
 import Font from "../hooks/font";
 import { MaterialIcons, Ionicons, AntDesign } from "@expo/vector-icons";
 import Card from "../components/card";
-import Swiper from "react-native-swiper";
 
 const Home = (props) => {
   return (
@@ -72,9 +71,7 @@ const Home = (props) => {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.cards}>
-          <Card />
-        </View>
+        <Card />
 
         <View style={styles.guide_container}>
           <Font size={22} weight={"bold"}>

@@ -1,8 +1,14 @@
 import React from "react";
-import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Text,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
 //import { LinearGradient } from "expo-linear-gradient";
 //import Font from "../hooks/font";
-import Swiper from "react-native-swiper";
 
 const Card = (props) => {
   return (
@@ -15,43 +21,33 @@ const Card = (props) => {
     //   </View>
     // </LinearGradient>
     <>
-      <View style={styles.card_container}>
-        <Swiper
-          horizontal={true}
-          autoplay={false}
-          showsPagination={false}
-          style={styles.wrapper}
-          loadMinimal={false}
-          //  loadMinimalSize={1}
-          showsButtons={false}
-          nextButton={<Text style={{ color: "blue" }}>Next</Text>}
-          prevButton={<Text></Text>}
-          // buttonWrapperStyle={{ }}
-        >
-          <View style={{ flexDirection: "row" }}>
-            <TouchableOpacity activeOpacity={0.6}>
-              <Image source={require("../assets/currencies/dolar.png")} />
-            </TouchableOpacity>
-            <TouchableOpacity activeOpacity={0.6} style={{ paddingLeft: 9 }}>
-              <Image source={require("../assets/currencies/euro.png")} />
-            </TouchableOpacity>
-            <TouchableOpacity activeOpacity={0.6} style={{ paddingLeft: 9 }}>
-              <Image source={require("../assets/currencies/bitcoin.png")} />
-            </TouchableOpacity>
-          </View>
-          <View style={{ marginLeft: 100, flexDirection: "row" }}>
-            <TouchableOpacity activeOpacity={0.6} style={{ paddingLeft: 9 }}>
-              <Image source={require("../assets/currencies/euro.png")} />
-            </TouchableOpacity>
-          </View>
+      <ScrollView horizontal={true}>
+        <View style={styles.card_container}>
+          <TouchableOpacity activeOpacity={0.6}>
+            <Image source={require("../assets/currencies/dolar.png")} />
+          </TouchableOpacity>
 
-          <View style={{ marginLeft: 100, flexDirection: "row" }}>
-            <TouchableOpacity activeOpacity={0.6} style={{ paddingLeft: 9 }}>
-              <Image source={require("../assets/currencies/bitcoin.png")} />
-            </TouchableOpacity>
-          </View>
-        </Swiper>
-      </View>
+          <TouchableOpacity activeOpacity={0.6} style={{ paddingLeft: 5 }}>
+            <Image source={require("../assets/currencies/euro.png")} />
+          </TouchableOpacity>
+
+          <TouchableOpacity activeOpacity={0.6} style={{ paddingLeft: 5 }}>
+            <Image source={require("../assets/currencies/bitcoin.png")} />
+          </TouchableOpacity>
+
+          <TouchableOpacity activeOpacity={0.6} style={{ paddingLeft: 5 }}>
+            <Image source={require("../assets/currencies/dolar.png")} />
+          </TouchableOpacity>
+
+          <TouchableOpacity activeOpacity={0.6} style={{ paddingLeft: 5 }}>
+            <Image source={require("../assets/currencies/euro.png")} />
+          </TouchableOpacity>
+
+          <TouchableOpacity activeOpacity={0.6} style={{ paddingLeft: 5 }}>
+            <Image source={require("../assets/currencies/bitcoin.png")} />
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
     </>
   );
 };
