@@ -1,11 +1,14 @@
 import React from "react";
 import { View, StyleSheet, Text, Button } from "react-native";
 
-const SignUp = (props) => {
+const SignUp = ({ navigation }) => {
   return (
     <View>
-      <Button title="Create Account" />
-      <Button title="Login" />
+      <Button
+        title="Create Account"
+        onPress={() => navigation.navigate("Details")}
+      />
+      <Button title="Login" onPress={() => navigation.navigate("Home")} />
     </View>
   );
 };

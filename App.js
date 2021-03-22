@@ -20,8 +20,7 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <>
-      <NavigationContainer>
-        {/* <Stack.Navigator headerMode="none">
+      {/* <Stack.Navigator headerMode="none">
           <Stack.Screen name="Home" component={HomeDrawer} />
           <Stack.Screen
             name="Test"
@@ -31,69 +30,68 @@ export default function App() {
             }}
           />
         </Stack.Navigator> */}
-        <Tab.Navigator
-          tabBarOptions={{
-            activeTintColor: "#31A063",
+      <Tab.Navigator
+        tabBarOptions={{
+          activeTintColor: "#31A063",
+        }}
+      >
+        <Tab.Screen
+          name="Home"
+          component={HomeDrawer}
+          options={{
+            tabBarIcon: ({ focused }) =>
+              focused ? (
+                <MaterialIcons name="home-filled" size={24} color="#31A063" />
+              ) : (
+                <MaterialIcons name="home" size={24} color="#D3D2D2" />
+              ),
           }}
-        >
-          <Tab.Screen
-            name="Home"
-            component={HomeDrawer}
-            options={{
-              tabBarIcon: ({ focused }) =>
-                focused ? (
-                  <MaterialIcons name="home-filled" size={24} color="#31A063" />
-                ) : (
-                  <MaterialIcons name="home" size={24} color="#D3D2D2" />
-                ),
-            }}
-          />
-          <Tab.Screen
-            name="Product"
-            component={Test}
-            options={{
-              tabBarIcon: ({ focused }) =>
-                focused ? (
-                  <MaterialIcons name="search" size={24} color="#31A063" />
-                ) : (
-                  <MaterialIcons name="search" size={24} color="#D3D2D2" />
-                ),
-            }}
-          />
-          <Tab.Screen
-            name="Transaction"
-            component={Test}
-            options={{
-              tabBarIcon: ({ focused }) =>
-                focused ? (
-                  <FontAwesome name="exchange" size={24} color="#31A063" />
-                ) : (
-                  <FontAwesome name="exchange" size={24} color="#D3D2D2" />
-                ),
-            }}
-          />
-          <Tab.Screen
-            name="Account"
-            component={Test}
-            options={{
-              tabBarIcon: ({ focused }) =>
-                focused ? (
-                  <MaterialCommunityIcons
-                    name="account"
-                    size={24}
-                    color="#31A063"
-                  />
-                ) : (
-                  <MaterialCommunityIcons
-                    name="account-outline"
-                    size={24}
-                    color="#D3D2D2"
-                  />
-                ),
-            }}
-          />
-        </Tab.Navigator>
-      </NavigationContainer>
+        />
+        <Tab.Screen
+          name="Product"
+          component={Test}
+          options={{
+            tabBarIcon: ({ focused }) =>
+              focused ? (
+                <MaterialIcons name="search" size={24} color="#31A063" />
+              ) : (
+                <MaterialIcons name="search" size={24} color="#D3D2D2" />
+              ),
+          }}
+        />
+        <Tab.Screen
+          name="Transaction"
+          component={Test}
+          options={{
+            tabBarIcon: ({ focused }) =>
+              focused ? (
+                <FontAwesome name="exchange" size={24} color="#31A063" />
+              ) : (
+                <FontAwesome name="exchange" size={24} color="#D3D2D2" />
+              ),
+          }}
+        />
+        <Tab.Screen
+          name="Account"
+          component={Test}
+          options={{
+            tabBarIcon: ({ focused }) =>
+              focused ? (
+                <MaterialCommunityIcons
+                  name="account"
+                  size={24}
+                  color="#31A063"
+                />
+              ) : (
+                <MaterialCommunityIcons
+                  name="account-outline"
+                  size={24}
+                  color="#D3D2D2"
+                />
+              ),
+          }}
+        />
+      </Tab.Navigator>
     </>
   );
 }
