@@ -21,7 +21,11 @@ const Card = (props) => {
     //   </View>
     // </LinearGradient>
     <>
-      <ScrollView horizontal={true}>
+      <ScrollView
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        scrollToOverflowEnabled={true}
+      >
         <View style={styles.card_container}>
           <TouchableOpacity activeOpacity={0.6}>
             <Image source={require("../assets/currencies/dolar.png")} />

@@ -13,7 +13,7 @@ import Card from "../components/card";
 
 const Home = (props) => {
   return (
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
         <View style={styles.icons}>
           <MaterialIcons
