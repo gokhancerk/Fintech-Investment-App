@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import Font from "../hooks/font";
-import { MaterialIcons, Ionicons } from "@expo/vector-icons";
+import { MaterialIcons, Ionicons, AntDesign } from "@expo/vector-icons";
 import Card from "../components/card";
 
 const Home = (props) => {
@@ -57,7 +57,18 @@ const Home = (props) => {
           <Font size={22} weight={"bold"}>
             Best Plans
           </Font>
-          <Button title="See All ->" />
+
+          <TouchableOpacity>
+            <View style={styles.see_all}>
+              <Font color="#FE555D" size={18}>
+                See All
+              </Font>
+
+              <View style={{ paddingLeft: 7 }}>
+                <AntDesign name="arrowright" size={24} color="#FE555D" />
+              </View>
+            </View>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.cards}>
@@ -162,6 +173,7 @@ const styles = StyleSheet.create({
   },
   plans_container: {
     marginTop: 47,
+    marginBottom: 24,
     flexDirection: "row",
     justifyContent: "space-between",
   },
@@ -185,6 +197,11 @@ const styles = StyleSheet.create({
   guide_ellipse: {
     alignItems: "center",
     flexDirection: "row",
+  },
+  see_all: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 
