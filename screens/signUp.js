@@ -1,14 +1,19 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, Button } from "react-native";
 
 const SignUp = (props) => {
   return (
     <View>
-      <Text>Sign Up</Text>
+      <Button title="Create Account" />
+      <Button title="Login" />
     </View>
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 export default SignUp;
