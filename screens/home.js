@@ -1,5 +1,12 @@
 import React from "react";
-import { View, StyleSheet, Button, ScrollView, Image } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Button,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import Font from "../hooks/font";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import Card from "../components/card";
@@ -36,7 +43,11 @@ const Home = (props) => {
               </Font>
 
               <View style={styles.invest}>
-                <Button title="Invest now" color="#31A078" />
+                <TouchableOpacity activeOpacity={0.6}>
+                  <Font size={14} color="#31A078" spacing={1} weight={"bold"}>
+                    Invest now
+                  </Font>
+                </TouchableOpacity>
               </View>
             </View>
           </View>
@@ -146,6 +157,8 @@ const styles = StyleSheet.create({
     width: 125,
     height: 40,
     borderRadius: 15,
+    alignItems: "center",
+    justifyContent: "center",
   },
   plans_container: {
     marginTop: 47,
@@ -163,10 +176,11 @@ const styles = StyleSheet.create({
   },
   guide_header: {
     paddingBottom: 10,
+    width: 271,
   },
   guide_description: {
     paddingBottom: 19,
-    width: 271,
+    width: 281,
   },
   guide_ellipse: {
     alignItems: "center",

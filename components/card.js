@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
-import Font from "../hooks/font";
+//import { LinearGradient } from "expo-linear-gradient";
+//import Font from "../hooks/font";
 
 const Card = (props) => {
   return (
