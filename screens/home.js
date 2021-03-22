@@ -10,6 +10,7 @@ import {
 import Font from "../hooks/font";
 import { MaterialIcons, Ionicons, AntDesign } from "@expo/vector-icons";
 import Card from "../components/card";
+import Swiper from "react-native-swiper";
 
 const Home = (props) => {
   return (
