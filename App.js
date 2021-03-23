@@ -1,10 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
-
-import { NavigationContainer } from "@react-navigation/native";
-
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
 import HomeDrawer from "./components/Drawers/Home";
 import Test from "./components/Test";
 
@@ -14,22 +9,11 @@ import {
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
 
-//const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <>
-      {/* <Stack.Navigator headerMode="none">
-          <Stack.Screen name="Home" component={HomeDrawer} />
-          <Stack.Screen
-            name="Test"
-            component={Test}
-            options={{
-              title: "Awesome app",
-            }}
-          />
-        </Stack.Navigator> */}
       <Tab.Navigator
         tabBarOptions={{
           activeTintColor: "#31A063",
@@ -95,5 +79,3 @@ export default function App() {
     </>
   );
 }
-
-const styles = StyleSheet.create({});

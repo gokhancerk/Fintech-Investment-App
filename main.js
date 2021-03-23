@@ -8,6 +8,7 @@ import SafeViewAndroid from "./components/SafeViewAndroid";
 
 import SignUp from "./screens/signUp";
 import App from "./App";
+import CreateAccount from "./screens/createAccount";
 
 const Stack = createStackNavigator();
 
@@ -19,21 +20,22 @@ const Onboard = ({ navigation }) => {
   );
 };
 
-function DetailsScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Details Screen</Text>
-    </View>
-  );
-}
+// function TestScreen() {
+//   return (
+//     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+//       <Text>Test Screen</Text>
+//     </View>
+//   );
+// }
+
 function Main() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Sign Up" component={Onboard} />
         <Stack.Screen
-          name="Details"
-          component={DetailsScreen}
+          name="Account"
+          component={CreateAccount}
           options={{
             headerShown: true,
           }}

@@ -28,7 +28,7 @@ const SignUp = ({ navigation }) => {
 
       <TouchableOpacity
         activeOpacity={0.6}
-        onPress={() => navigation.navigate("Details")}
+        onPress={() => navigation.navigate("Account")}
       >
         <CustomButton title={"Create account"} />
       </TouchableOpacity>
