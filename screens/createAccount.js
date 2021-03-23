@@ -68,7 +68,7 @@ const CreateAccount = ({ navigation }) => {
         <View style={{ marginTop: 46 }}>
           <TouchableOpacity
             activeOpacity={0.6}
-            onPress={() => navigation.navigate("Home")}
+            onPress={() => navigation.navigate("Login")}
           >
             <Text style={{ color: "#31A062", fontWeight: "bold" }}>
               Already have an account?

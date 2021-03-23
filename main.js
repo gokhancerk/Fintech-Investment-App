@@ -9,6 +9,7 @@ import SafeViewAndroid from "./components/SafeViewAndroid";
 import SignUp from "./screens/signUp";
 import App from "./App";
 import CreateAccount from "./screens/createAccount";
+import Login from "./screens/login";
 
 const Stack = createStackNavigator();
 
@@ -41,6 +42,13 @@ function Main() {
           }}
         />
         <Stack.Screen name="Home" component={App} />
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{
+            headerShown: true,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
