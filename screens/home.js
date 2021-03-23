@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import Font from "../hooks/font";
 import { MaterialIcons, Ionicons, AntDesign } from "@expo/vector-icons";
-import Card from "../components/Card";
+import Card from "../components/card";
 
 const Home = (props) => {
   return (

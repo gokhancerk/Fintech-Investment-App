@@ -1,92 +1,89 @@
 import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { View, Text } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { View, Text, SafeAreaView } from "react-native";
+import { registerRootComponent } from "expo";
 
-import HomeDrawer from "./components/Drawers/Home";
+import SafeViewAndroid from "./components/SafeViewAndroid";
 
-import {
-  MaterialIcons,
-  FontAwesome,
-  MaterialCommunityIcons,
-} from "@expo/vector-icons";
+import SignUp from "./screens/signUp";
+import App from "./main";
+import CreateAccount from "./screens/createAccount";
+import Login from "./screens/login";
 
-const Tab = createBottomTabNavigator();
+//import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
 
-function TestScreen() {
+const Stack = createStackNavigator();
+
+// function getHeaderTitle(route) {
+//   const routeName = getFocusedRouteNameFromRoute(route) ?? "Home";
+
+//   switch (routeName) {
+//     case "Home":
+//       return "Home";
+//     case "Product":
+//       return "Product";
+//     case "Transaction":
+//       return "Transaction";
+//     case "Account":
+//       return "My account";
+//   }
+// }
+
+const Onboard = ({ navigation }) => {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Test Screen</Text>
-    </View>
+    <SafeAreaView style={SafeViewAndroid.AndroidSafeArea}>
+      <SignUp navigation={navigation} />
+    </SafeAreaView>
   );
-}
+};
 
-export default function App({ navigation }) {
-  console.log(navigation);
+// function TestScreen() {
+//   return (
+//     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+//       <Text>Test Screen</Text>
+//     </View>
+//   );
+// }
+
+function Main() {
   return (
-    <>
-      <Tab.Navigator
-        tabBarOptions={{
-          activeTintColor: "#31A063",
-        }}
-        screenOptions={{}}
-      >
-        <Tab.Screen
-          name="Home"
-          component={HomeDrawer}
-          options={{
-            tabBarIcon: ({ focused }) =>
-              focused ? (
-                <MaterialIcons name="home-filled" size={24} color="#31A063" />
-              ) : (
-                <MaterialIcons name="home" size={24} color="#D3D2D2" />
-              ),
-          }}
-        />
-        <Tab.Screen
-          name="Product"
-          component={TestScreen}
-          options={{
-            tabBarIcon: ({ focused }) =>
-              focused ? (
-                <MaterialIcons name="search" size={24} color="#31A063" />
-              ) : (
-                <MaterialIcons name="search" size={24} color="#D3D2D2" />
-              ),
-          }}
-        />
-        <Tab.Screen
-          name="Transaction"
-          component={TestScreen}
-          options={{
-            tabBarIcon: ({ focused }) =>
-              focused ? (
-                <FontAwesome name="exchange" size={24} color="#31A063" />
-              ) : (
-                <FontAwesome name="exchange" size={24} color="#D3D2D2" />
-              ),
-          }}
-        />
-        <Tab.Screen
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Sign Up" component={Onboard} />
+        <Stack.Screen
           name="Account"
-          component={TestScreen}
+          component={CreateAccount}
           options={{
-            tabBarIcon: ({ focused }) =>
-              focused ? (
-                <MaterialCommunityIcons
-                  name="account"
-                  size={24}
-                  color="#31A063"
-                />
-              ) : (
-                <MaterialCommunityIcons
-                  name="account-outline"
-                  size={24}
-                  color="#D3D2D2"
-                />
-              ),
+            headerShown: true,
           }}
         />
-      </Tab.Navigator>
-    </>
+        <Stack.Screen
+          name="Home"
+          component={App}
+          options={{
+            gestureEnabled: false,
+          }}
+
+          // options={({ route }) => ({
+          //   headerTitle: getHeaderTitle(route),
+          //   headerShown: getHeaderTitle(route) === "Home" ? false : true,
+          //   gestureEnabled: false,
+          //   headerBackTitleVisible: false,
+          // })}
+        />
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{
+            headerShown: true,
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
+
+export default Main;
+
+registerRootComponent(Main);
