@@ -1,7 +1,7 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { View, Text, SafeAreaView } from "react-native";
+import { SafeAreaView } from "react-native";
 import { registerRootComponent } from "expo";
 
 import SafeViewAndroid from "./components/SafeViewAndroid";

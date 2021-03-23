@@ -30,7 +30,6 @@ const Login = ({ navigation }) => {
           <View>
             <Input
               holder={"User Name"}
-              autoFocus={true}
               autoCapitalize="none"
               autoCorrect={false}
             />

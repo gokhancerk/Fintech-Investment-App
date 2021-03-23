@@ -2,7 +2,6 @@ import React from "react";
 import {
   View,
   Text,
-  TextInput,
   StyleSheet,
   TouchableWithoutFeedback,
   Keyboard,
@@ -14,50 +13,52 @@ import Font from "../hooks/font";
 
 const CreateAccount = ({ navigation }) => {
   return (
-    <TouchableWithoutFeedback
-      onPress={() => {
-        Keyboard.dismiss();
-      }}
-    >
+    <>
       <View style={styles.container}>
-        <View style={styles.top}>
-          <Font size={34} weight={"bold"}>
-            Create an account
-          </Font>
-        </View>
+        <TouchableWithoutFeedback
+          onPress={() => {
+            Keyboard.dismiss();
+          }}
+        >
+          <View>
+            <View style={styles.top}>
+              <Font size={34} weight={"bold"}>
+                Create an account
+              </Font>
+            </View>
 
-        <View style={styles.subtext}>
-          <Font size={17} color={"#4F4F4F"}>
-            Invest and double your income now
-          </Font>
-        </View>
+            <View style={styles.subtext}>
+              <Font size={17} color={"#4F4F4F"}>
+                Invest and double your income now
+              </Font>
+            </View>
 
-        <View>
-          <Input
-            holder={"Full name"}
-            autoFocus={true}
-            autoCapitalize="none"
-            autoCorrect={false}
-          />
-        </View>
-        <View style={styles.email}>
-          <Input
-            holder={"Email address"}
-            autoCapitalize="none"
-            autoCorrect={false}
-            keyboardType="email-address"
-          />
-        </View>
+            <View>
+              <Input
+                holder={"Full name"}
+                autoCapitalize="none"
+                autoCorrect={false}
+              />
+            </View>
+            <View style={styles.email}>
+              <Input
+                holder={"Email address"}
+                autoCapitalize="none"
+                autoCorrect={false}
+                keyboardType="email-address"
+              />
+            </View>
 
-        <View style={styles.password}>
-          <Input
-            holder={"Password"}
-            autoCapitalize="none"
-            autoCorrect={false}
-            secureTextEntry={true}
-          />
-        </View>
-
+            <View style={styles.password}>
+              <Input
+                holder={"Password"}
+                autoCapitalize="none"
+                autoCorrect={false}
+                secureTextEntry={true}
+              />
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
         <TouchableOpacity
           activeOpacity={0.6}
           onPress={() => navigation.navigate("Home")}
@@ -76,7 +77,7 @@ const CreateAccount = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </View>
-    </TouchableWithoutFeedback>
+    </>
   );
 };
 
