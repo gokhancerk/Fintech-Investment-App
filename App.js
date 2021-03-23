@@ -1,7 +1,8 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { View, Text } from "react-native";
+
 import HomeDrawer from "./components/Drawers/Home";
-import Test from "./components/Test";
 
 import {
   MaterialIcons,
@@ -11,13 +12,23 @@ import {
 
 const Tab = createBottomTabNavigator();
 
-export default function App() {
+function TestScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text>Test Screen</Text>
+    </View>
+  );
+}
+
+export default function App({ navigation }) {
+  console.log(navigation);
   return (
     <>
       <Tab.Navigator
         tabBarOptions={{
           activeTintColor: "#31A063",
         }}
+        screenOptions={{}}
       >
         <Tab.Screen
           name="Home"
@@ -33,7 +44,7 @@ export default function App() {
         />
         <Tab.Screen
           name="Product"
-          component={Test}
+          component={TestScreen}
           options={{
             tabBarIcon: ({ focused }) =>
               focused ? (
@@ -45,7 +56,7 @@ export default function App() {
         />
         <Tab.Screen
           name="Transaction"
-          component={Test}
+          component={TestScreen}
           options={{
             tabBarIcon: ({ focused }) =>
               focused ? (
@@ -57,7 +68,7 @@ export default function App() {
         />
         <Tab.Screen
           name="Account"
-          component={Test}
+          component={TestScreen}
           options={{
             tabBarIcon: ({ focused }) =>
               focused ? (

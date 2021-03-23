@@ -11,7 +11,24 @@ import App from "./App";
 import CreateAccount from "./screens/createAccount";
 import Login from "./screens/login";
 
+//import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
+
 const Stack = createStackNavigator();
+
+// function getHeaderTitle(route) {
+//   const routeName = getFocusedRouteNameFromRoute(route) ?? "Home";
+
+//   switch (routeName) {
+//     case "Home":
+//       return "Home";
+//     case "Product":
+//       return "Product";
+//     case "Transaction":
+//       return "Transaction";
+//     case "Account":
+//       return "My account";
+//   }
+// }
 
 const Onboard = ({ navigation }) => {
   return (
@@ -41,7 +58,20 @@ function Main() {
             headerShown: true,
           }}
         />
-        <Stack.Screen name="Home" component={App} />
+        <Stack.Screen
+          name="Home"
+          component={App}
+          options={{
+            gestureEnabled: false,
+          }}
+
+          // options={({ route }) => ({
+          //   headerTitle: getHeaderTitle(route),
+          //   headerShown: getHeaderTitle(route) === "Home" ? false : true,
+          //   gestureEnabled: false,
+          //   headerBackTitleVisible: false,
+          // })}
+        />
         <Stack.Screen
           name="Login"
           component={Login}

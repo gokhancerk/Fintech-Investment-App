@@ -1,11 +1,7 @@
 import React from "react";
-import { View, StyleSheet, Button, Text, SafeAreaView } from "react-native";
+import { View, StyleSheet, Button, SafeAreaView } from "react-native";
 import SafeViewAndroid from "../../components/SafeViewAndroid";
-
-import Home from "../../screens/home";
-
 import "react-native-gesture-handler";
-
 import {
   createDrawerNavigator,
   DrawerItem,
@@ -13,6 +9,7 @@ import {
 } from "@react-navigation/drawer";
 
 import Font from "../../hooks/font";
+import Home from "../../screens/home";
 
 const Drawer = createDrawerNavigator();
 
@@ -21,12 +18,6 @@ function HomeScreen({ navigation }) {
     <SafeAreaView style={SafeViewAndroid.AndroidSafeArea}>
       <View style={styles.container}>
         <Home navigation={navigation} />
-
-        {/* <Button
-          title="Go to Details"
-          onPress={() => navigation.navigate("Test")}
-        />
-        <Button title="Icon" onPress={() => navigation.toggleDrawer()} /> */}
       </View>
     </SafeAreaView>
   );
@@ -53,7 +44,6 @@ function CustomDrawerContent(props) {
       <Button
         title="Go somewhere"
         onPress={() => {
-          // Navigate using the `navigation` prop that you received
           props.navigation.navigate("Test");
         }}
       />

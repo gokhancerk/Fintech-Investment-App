@@ -2,9 +2,9 @@
 
 ![invest app](./investapp.jpg)
 
-[design by](https://www.figmacrush.com/figma-investment-app-template/)
+# [Live](https://snack.expo.io/@gokhancerk/fintech-investment-app)
 
-[login page image designed by / Freepik](http://www.freepik.com)
+You can view and run on your mobile phone for this you must install expo mobile application from the google play or apple store.
 
 ## ToDo:
 
@@ -12,3 +12,9 @@
 - Login Input Validate
 - Context Api
 - Refresh Control
+
+### Resources
+
+- [app designed by](https://www.figmacrush.com/figma-investment-app-template/)
+
+- [login page image designed by / Freepik](http://www.freepik.com)
