@@ -19,6 +19,7 @@ const Font = (props) => {
         color: props.color,
         fontWeight: props.weight,
         letterSpacing: props.spacing,
+        textAlign: props.align,
       }}
     >
       {props.children}
